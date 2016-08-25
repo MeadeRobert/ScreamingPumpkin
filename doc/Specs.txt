@@ -1,0 +1,9 @@
+Screaming Pumpkin Mod v1.0
+Github: https://github.com/MeadeRobert/ScreamingPumpkin
+Adds:
+-screaming pumpkin block
+-screaming pumpkin craft rec
+-screaming pumpkin sound
+-singing pumpkin block
+-singing pumpkin craft rec
+-singing pumpkin sound
