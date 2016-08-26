@@ -7,3 +7,7 @@ Adds:
 -singing pumpkin block
 -singing pumpkin craft rec
 -singing pumpkin sound
+
+-scream powder item
+ -crafted redstone & gunpowder
+-screaming pumpkin crafted scream powder & pumpkin
