@@ -6,14 +6,14 @@ import net.minecraft.item.Item;
 
 public final class ModItems
 {	
-	public static Item screamer;
+	public static Item screamPowder;
 	
 	public static final void init()
 	{
-		screamer = new Item()
-				.setUnlocalizedName("Screamer")
+		screamPowder = new Item()
+				.setUnlocalizedName("screamPowder")
 				.setCreativeTab(CreativeTabs.tabMisc)
-				.setTextureName(ScreamingPumpkin.MODID + ":screamer");
-		GameRegistry.registerItem(screamer,  "Screamer");
+				.setTextureName(ScreamingPumpkin.MODID + ":screamPowder");
+		GameRegistry.registerItem(screamPowder,  "screamPowder");
 	}
 }

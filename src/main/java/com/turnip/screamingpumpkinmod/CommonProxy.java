@@ -11,10 +11,13 @@ public class CommonProxy
 	 public void preInit(FMLPreInitializationEvent e)
 	 {
 		 ModItems.init();
+		 ModBlocks.init();
 	 }
 	    
 	 @EventHandler
-	 public void init(FMLInitializationEvent e){}
+	 public void init(FMLInitializationEvent e)
+	 {
+	 }
 	    
 	 @EventHandler
 	 public void postInit(FMLPostInitializationEvent e) {}
