@@ -39,8 +39,6 @@ public class ScreamingPumpkin
     {
     	proxy.init(e);
     	FMLLog.log(Level.INFO, "Test Log >> Test Message");
-//    	log.info("Test Log >> Test Message");
-//    	log.error("Test Log >> Test Message");
     }
     
     
