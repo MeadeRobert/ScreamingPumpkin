@@ -41,7 +41,8 @@ public class ScreamingPumpkinBlock extends BlockDirectional
 	@Override
 	public void updateTick(World world, int x, int y, int z, Random r)
 	{
-		world.playSoundEffect(x + 0.5D, y + 0.5D, z + 0.5D, "mob.endermen.portal", 1.0F, 1.0F);
+		// randomly scream
+		world.playSoundEffect(x + .5D, y + .5D, z + .5D, "screamingpumpkin:pumpkin_scream", 1.0F, 1.0F);
 	}
 	
 	/**

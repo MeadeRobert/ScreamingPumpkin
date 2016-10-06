@@ -1,12 +1,10 @@
 {
-  "pumpkin_scream": {
-    "category": "ambient",
-    "replace": true,
-    "sounds": [
-      {
-        "name": "ryan_screech",
-        "type": "event",
-        "weight": 1
-      },
-    ]
-  },
+	"pumpkin_scream":
+	 {
+	 	"category": "neutral",
+	 	"sounds": 
+	 		[
+	 			"ryan_screech"
+	 		]
+	 }
+}

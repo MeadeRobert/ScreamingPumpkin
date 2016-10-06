@@ -9,6 +9,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
+
 import org.apache.logging.log4j.*;
 
 @Mod(modid = ScreamingPumpkin.MODID, name = ScreamingPumpkin.MODNAME, version = ScreamingPumpkin.VERSION)
@@ -27,24 +28,25 @@ public class ScreamingPumpkin
     public static ScreamingPumpkin instance = new ScreamingPumpkin();
     
     public static final Logger log = LogManager.getLogger(ScreamingPumpkin.class.getName());
-    
+   
     @EventHandler
     public void preInit(FMLPreInitializationEvent e)
     {
     	proxy.preInit(e);
+    	FMLLog.log(Level.INFO, "ScreamingPumpkin Mod Pre-Init >> Complete");
     }
     
     @EventHandler
     public void init(FMLInitializationEvent e)
     {
     	proxy.init(e);
-    	FMLLog.log(Level.INFO, "Test Log >> Test Message");
+    	FMLLog.log(Level.INFO, "ScreamingPumpkin Mod Init >> Complete");
     }
-    
     
     @EventHandler
     public void postInit(FMLPostInitializationEvent e)
     {
     	proxy.postInit(e);
+    	FMLLog.log(Level.INFO, "ScreamingPumpkin Mod Post-Init >> Complete");
     }
 }
