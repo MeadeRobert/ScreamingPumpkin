@@ -1,5 +1,7 @@
 package com.turnip.screamingpumpkinmod;
 
+import java.util.Random;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockDirectional;
@@ -27,6 +29,7 @@ public class ScreamingPumpkinBlock extends BlockDirectional
 	protected ScreamingPumpkinBlock(String unlocalizedName, Material m)
 	{
 		super(m);
+		this.setTickRandomly(true);
 		this.setBlockName(unlocalizedName);
 		this.setBlockTextureName(ScreamingPumpkin.MODID + ":" + unlocalizedName);
 		this.setCreativeTab(CreativeTabs.tabBlock);
@@ -35,9 +38,16 @@ public class ScreamingPumpkinBlock extends BlockDirectional
 		this.setHarvestLevel("axe", 0);
 	}
 
+	@Override
+	public void updateTick(World world, int x, int y, int z, Random r)
+	{
+		world.playSoundEffect(x + 0.5D, y + 0.5D, z + 0.5D, "mob.endermen.portal", 1.0F, 1.0F);
+	}
+	
 	/**
 	 * Called whenever the block is added into the world. Args: world, x, y, z
 	 */
+	@Override
 	public void onBlockAdded(World world, int x, int y, int z)
 	{
 		super.onBlockAdded(world, x, y, z);
@@ -124,6 +134,7 @@ public class ScreamingPumpkinBlock extends BlockDirectional
 	 * Checks to see if its valid to put this block at the specified
 	 * coordinates. Args: world, x, y, z
 	 */
+	@Override
 	public boolean canPlaceBlockAt(World world, int x, int y, int z)
 	{
 		return world.getBlock(x, y, z).isReplaceable(world, x, y, z)
@@ -133,6 +144,7 @@ public class ScreamingPumpkinBlock extends BlockDirectional
 	/**
 	 * Called when the block is placed in the world.
 	 */
+	@Override
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack itemStack)
 	{
 		int l = MathHelper.floor_double((double) (entity.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
@@ -140,6 +152,7 @@ public class ScreamingPumpkinBlock extends BlockDirectional
 	}
 
 	@SideOnly(Side.CLIENT)
+	@Override
 	public void registerBlockIcons(IIconRegister reg)
 	{
 		this.faceIcon = reg.registerIcon(this.getTextureName() + "_face_" + (this.jackOLantern ? "on" : "off"));
@@ -151,8 +164,10 @@ public class ScreamingPumpkinBlock extends BlockDirectional
 	 * Gets the block's texture. Args: side, meta
 	 */
 	@SideOnly(Side.CLIENT)
+	@Override
 	public IIcon getIcon(int side, int meta)
 	{
+		// not our fault... blame notch for this
 		return side == 1 ? this.topIcon
 				: (side == 0 ? this.topIcon
 						: (meta == 2 && side == 2 ? this.faceIcon
